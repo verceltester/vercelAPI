@@ -6,6 +6,10 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hello to cacheBackend")
+})
+
 app.get("/api", async (req, res) => {
   try {
     const response = await fetch(req.query.url)
